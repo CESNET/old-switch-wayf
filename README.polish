@@ -1,0 +1,2 @@
+do cronu uzivatele www-data je potreba dat nasledujici:
+5 * * * * cd /var/www/old-wayf-hostel; /usr/bin/wget https://metadata.eduid.cz/entities/hostel -O hostel && mv hostel metadata.xml
