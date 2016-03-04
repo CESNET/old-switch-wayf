@@ -66,6 +66,7 @@ if(isRunViaCLI()){
 	// Release the lock, and close.
 	flock($lockFp, LOCK_UN);
 	fclose($lockFp);
+	unlink($metadataLockFile);
 		
 	// If $metadataIDProviders is not FALSE, update $IDProviders and print the Identity Providers lists.
 	if(is_array($metadataIDProviders)){ 
