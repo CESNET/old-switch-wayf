@@ -147,13 +147,17 @@ $federationName = 'czTestFed';
 $federationURL = 'http://www.eduid.cz/';
 
 // Use an absolute URL in case you want to use the embedded WAYF
-$imageURL = 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['SCRIPT_NAME']).'/images';
-
+$imageURL = 'images';
 // Absolute URL to point to css directory
-$cssURL = 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['SCRIPT_NAME']).'/css';
-
+$cssURL = 'css';
 // Absolute URL to point to javascript directory
-$javascriptURL = 'https://'.$_SERVER['SERVER_NAME'].dirname($_SERVER['SCRIPT_NAME']).'/js';
+$javascriptURL = 'js';
+
+if (isset($_SERVER['HTTP_HOST']) and (isset($_SERVER['REQUEST_URI']))) {
+  $imageURL = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'/images';
+  $cssURL = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'/css';
+  $javascriptURL = 'https://'.$_SERVER['HTTP_HOST'].$_SERVER['REQUEST_URI'].'/js';
+};
 
 // Absolute URL to the logo that shall be displayed in the Embedded WAYF
 $logoURL = $imageURL.'/cztestfed.png'; 
