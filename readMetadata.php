@@ -165,6 +165,7 @@ if(isRunViaCLI()){
 	// Close the metadata lock file.
 	if ($lockFp !== false) {
 		fclose($lockFp);
+		unlink($metadataLockFile);
 	}
 	
 } else {
