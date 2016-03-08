@@ -77,7 +77,9 @@ function initConfigOptions(){
 	$defaults['metadataFile'] = '/etc/shibboleth/metadata.switchaai.xml';
 	$defaults['metadataIDPFile'] = 'IDProvider.metadata.php';
 	$defaults['metadataSPFile'] = 'SProvider.metadata.php';
-	$defaults['metadataLockFile'] = (substr($_SERVER['PATH'],0,1) == '/') ? '/tmp/wayf_metadata.lock' : 'C:\windows\TEMP';
+	#semik neni definovano v php-fmp kaslem na to
+	#$defaults['metadataLockFile'] = (substr($_SERVER['PATH'],0,1) == '/') ? '/tmp/wayf_metadata.lock' : 'C:\windows\TEMP';
+	$defaults['metadataLockFile'] = '/tmp/wayf_metadata.lock';
 	$defaults['WAYFLogFile'] = '/var/log/apache2/wayf.log'; 
 	$defaults['kerberosRedirectURL'] = dirname($_SERVER['SCRIPT_NAME']).'kerberosRedirect.php';
 	$defaults['developmentMode'] = false;
